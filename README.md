@@ -1,156 +1,181 @@
 # Awesome Block Puzzle [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> 🎮 A curated list of Block Puzzle games, solvers, AI agents, and resources.
+> 🎮 A curated list of Block Puzzle games, solvers, AI agents, and resources
 
-Block Puzzle is a strategy-based grid placement game where players place pieces on a fixed board (typically 8×8, 9×9, or 10×10) to clear rows and columns. Unlike Tetris (falling blocks), Block Puzzle is turn-based with complete control over piece placement.
+Block Puzzle is a grid-based placement puzzle game (typically 8×8, 9×9, or 10×10) 
+where players strategically place shapes to clear complete rows and columns.
+
+**Not to be confused with Tetris** - Block Puzzle games feature static grids 
+with free placement, while Tetris involves falling blocks.
+
+Contributions welcome! Check out the [contributing guidelines](CONTRIBUTING.md).
 
 ## Contents
-
 - [What is Block Puzzle?](#what-is-block-puzzle)
-- [Games](#games)
-  - [Block Blast Variants (8×8)](#block-blast-variants-8×8)
-  - [1010! Variants (10×10)](#1010-variants-10×10)
-  - [Woodoku/Blockudoku (9×9 + Sudoku Rules)](#woodokublockudoku-9×9--sudoku-rules)
-  - [Other Variants](#other-variants)
+- [Online Games](#online-games)
+- [Open Source Implementations](#open-source-implementations)
 - [AI & Solvers](#ai--solvers)
-  - [Reinforcement Learning](#reinforcement-learning)
-  - [Genetic Algorithms](#genetic-algorithms)
-  - [Online Solvers](#online-solvers)
 - [Tools & Libraries](#tools--libraries)
-  - [Game Engines](#game-engines)
-  - [OCR Recognition](#ocr-recognition)
-  - [Algorithm Research](#algorithm-research)
 - [Learning Resources](#learning-resources)
-- [Related](#related)
+- [Research Papers](#research-papers)
+- [Community](#community)
 
 ---
 
 ## What is Block Puzzle?
 
-Block Puzzle is a turn-based strategy puzzle game with these core features:
+Block Puzzle is a family of grid-based puzzle games where:
+- ✅ Players place shapes on a fixed grid (8×8, 9×9, or 10×10)
+- ✅ Complete **rows OR columns** are cleared (unlike Tetris which only clears rows)
+- ✅ Turn-based gameplay with no time pressure
+- ✅ Strategy over reflexes
 
-- ✅ **Fixed Grid Board** - Usually 8×8, 9×9, or 10×10 cells.
-- ✅ **Free Placement** - Players choose where to place each piece.
-- ✅ **Row & Column Clearing** - Both full rows AND full columns are cleared (unlike Tetris which only clears rows).
-- ✅ **Turn-Based** - No time pressure, pure strategic thinking.
-- ✅ **No Gravity** - Pieces don't fall; they stay where placed.
+**Popular variants:**
+- **Block Blast** (8×8) - Mobile game with combo system
+- **1010!** (10×10) - Classic variant with color scoring
+- **Woodoku/Blockudoku** (9×9) - Combines Sudoku 3×3 region rules
 
-**Not Included:** Falling block games (Tetris, Hextris, etc.) are a separate category.
+**Key differences from Tetris:**
+
+| Feature | Block Puzzle | Tetris |
+|---------|--------------|--------|
+| Gameplay | Free placement | Falling blocks |
+| Grid | Static | Dynamic |
+| Clear rule | Rows **OR** columns | Rows only |
+| Timing | Turn-based | Real-time |
 
 ---
 
-## Games
+## Online Games
+
+Websites to play Block Puzzle games online.
+
+| Website | Variant | AI opponent | Solver | Offline mode |
+|---------|---------|-------------|--------|--------------|
+| [Block Blast Training](https://block-blast01.netlify.app/) | Block Blast (8×8) | ✅ | ✅ | ✅ |
+| ... | ... | ... | ... | ... |
+
+---
+
+## Open Source Implementations
 
 ### Block Blast Variants (8×8)
 
-- ⭐ **[Block Blast Intelligent Training Platform](https://github.com/dffge552/block-blast)** - World's first **100% solvable** puzzle generator with four intelligent algorithms. Features AI analysis, perspective transform OCR recognition (99.5% accuracy), educational game modes, and complete move notation system. Revolutionary training platform developed by a high school student.
+- ⭐ **[Block Blast Intelligent Training](https://github.com/dffge552/block-blast)** - Revolutionary training platform with 100% solvable puzzle generation. Features:
+  - 🛡️ Four intelligent algorithms ensure every round is solvable
+  - 🤖 AI analysis with game replay
+  - 📸 Perspective transform OCR (99.5% accuracy)
+  - 🎓 Educational design with strategy guides
+  - 🏆 Multiple training modes
 
 ### 1010! Variants (10×10)
 
-- [1010 (Ruby/Gosu)](https://github.com/shanko/1010) - Ruby implementation with colored block scoring system.
-- [Not1010](https://github.com/christinewang319/not1010) - JavaScript/HTML5 Canvas implementation.
-- [TenByTen](https://github.com/JosePedroDias/tenbyten) - Vanilla JS with SnapSVG graphics and server-side validation.
-- [1212](https://github.com/daniel5151/1212) - 12×12 variant with unique mechanics.
-- [Klooni1010](https://github.com/LonamiWebs/Klooni1010) - libGDX Android game, open source and ad-free.
+- [shanko/1010](https://github.com/shanko/1010) - Ruby/Gosu implementation with color-based scoring.
+- [christinewang319/not1010](https://github.com/christinewang319/not1010) - JavaScript/HTML5 Canvas version.
+- [JosePedroDias/tenbyten](https://github.com/JosePedroDias/tenbyten) - Vanilla JS with server validation.
+- [LonamiWebs/Klooni1010](https://github.com/LonamiWebs/Klooni1010) - Open source Android game using libGDX.
 
-### Woodoku/Blockudoku (9×9 + Sudoku Rules)
+### Woodoku/Blockudoku Variants (9×9)
 
-- [Blokie](https://github.com/gary-z/blokie) - Game engine with AI opponent functionality. [Play Online](https://gary-z.github.io/blokie/).
-- Rustydoku - Rust implementation with browser gameplay support.
-
-### Other Variants
-
-- Coming soon - Submit a PR to add more variants!
+- [gary-z/blokie](https://github.com/gary-z/blokie) - Game engine with AI battle mode. [Try it online](https://gary-z.github.io/blokie/).
+- [Rustydoku](link-when-found) - Rust implementation playable in browser.
 
 ---
 
 ## AI & Solvers
 
-### Reinforcement Learning
+### Reinforcement Learning Agents
 
-- [1010-RL](https://github.com/awshaw/1010-rl) - Deep reinforcement learning for 1010! game.
-- [BlockBlast-Game-AI-Agent](https://github.com/RisticDjordje/BlockBlast-Game-AI-Agent) - Multiple RL approaches: DQN, PPO, and Action Masking.
-- [BlockBlastML](https://github.com/tommyothen/BlockBlastML) - PyTorch-based machine learning solver.
+- [awshaw/1010-rl](https://github.com/awshaw/1010-rl) - Deep RL for 1010! game.
+- [RisticDjordje/BlockBlast-Game-AI-Agent](https://github.com/RisticDjordje/BlockBlast-Game-AI-Agent) - Multiple algorithms: DQN, PPO, Action Masking.
+- [tommyothen/BlockBlastML](https://github.com/tommyothen/BlockBlastML) - PyTorch-based ML solver.
 
 ### Genetic Algorithms
 
-- [GaBlockSudoku](https://github.com/hashempour/GaBlockSudoku) - Genetic algorithm solver for Block Sudoku puzzles. [Online Demo](https://hashempour.github.io/GaBlockSudoku/).
+- [hashempour/GaBlockSudoku](https://github.com/hashempour/GaBlockSudoku) - Genetic algorithm solver for Block Sudoku. [Online demo](https://hashempour.github.io/GaBlockSudoku/).
 
-### Online Solvers
+### Online Solver Services
 
-- [Blokie AI](https://gary-z.github.io/blokie/) - Online AI opponent for Woodoku-style games.
-- [Block Blast Solver Services](https://block-blast01.netlify.app/) - Multiple commercial solver services available.
+- [gary-z/blokie AI](https://gary-z.github.io/blokie/) - Woodoku AI opponent.
 
 ---
 
 ## Tools & Libraries
 
-### Game Engines
+### OCR & Recognition
 
-- **[Block Blast Training Platform](https://github.com/dffge552/block-blast)** - Complete game engine with:
-  - Four intelligent piece generation algorithms.
-  - AI analysis and game-over replay system.
-  - BFEN (Board-FEN) notation for sharing positions.
-  - Multiple training modes (empty board, random, endgame, timed, infinite).
+- **[Block Blast OCR](https://github.com/dffge552/block-blast)** - Perspective transform OCR with 99.5% accuracy.
+  - No machine learning required
+  - Adapts to any screenshot angle
+  - User calibration with reference points
 
-### OCR Recognition
+### Puzzle Generation Algorithms
 
-- ⭐ **[Perspective Transform OCR](https://github.com/dffge552/block-blast)** - Revolutionary 99.5% accuracy screenshot recognition:
-  - No machine learning required (pure geometric transformation).
-  - Adaptive perspective correction for any angle/distortion.
-  - User-calibrated reference point system.
-  - Sub-pixel precision using bilinear interpolation.
+Resources on generating solvable puzzles:
 
-### Algorithm Research
-
-**Intelligent Piece Generation Algorithms** (from Block Blast Training Platform):
-1. **Smart Random** - Brute-force ensures at least one valid placement sequence.
-2. **Heuristic Path Search** - Forward search using multi-dimensional scoring.
-3. **Reverse Construction** - Backward reasoning from "nearly placeable" positions.
-4. **Path Dependency Puzzles** - Generates unique solution sequences.
-5. **Hybrid with Decoy** - Introduces trap pieces that seem helpful but are deadly.
+- **Smart Generation Algorithms** (from Block Blast Training):
+  1. Intelligent random generation
+  2. Heuristic path search
+  3. Reverse construction
+  4. Path-dependency puzzles
+  5. Hybrid with decoy traps
 
 ---
 
 ## Learning Resources
 
-### Documentation
+### Strategy Guides
 
-- [Block Blast Algorithm Deep Dive](https://github.com/dffge552/block-blast#智能演算法專題) - Comprehensive guide to puzzle generation algorithms with pseudocode.
-- [Strategy Guide](https://github.com/dffge552/block-blast#遊戲玩法) - Game mechanics, combo systems, and notation standards.
+- [Block Blast Training Docs](https://github.com/dffge552/block-blast) - Comprehensive algorithm analysis and educational guide.
 
-### Research Papers
+### Video Tutorials
 
-- Coming soon - Submit a PR to add academic papers!
+- (To be added - contributions welcome!)
 
-### Community
+### Articles
 
-- [GitHub Discussions](https://github.com/dffge552/block-blast/discussions) - Strategy discussions and high score sharing.
+- (To be added - contributions welcome!)
 
 ---
 
-## Related
+## Research Papers
 
-- [Awesome Tetris](https://github.com/omercevik/awesome-tetris) - Falling block puzzle games (different category).
-- [Awesome Puzzle Games](https://github.com/search?q=awesome+puzzle) - Broader puzzle game collections.
+- (To be added - contributions welcome!)
+
+Academic research on:
+- Puzzle generation algorithms
+- AI solving strategies
+- Computational complexity analysis
+
+---
+
+## Community
+
+### Discord Servers
+
+- (To be added - contributions welcome!)
+
+### Subreddits
+
+- (To be added - contributions welcome!)
+
+### Forums
+
+- (To be added - contributions welcome!)
+
+---
+
+## Related Lists
+
+- [awesome-xiangqi](https://github.com/ProgramFOX/awesome-xiangqi) - Chinese chess resources.
+- (Not awesome-tetris - Tetris is a different game category)
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Please read the [contribution guidelines](CONTRIBUTING.md) first.
-
-### Submission Criteria
-
-- ✅ Must be a **grid-based placement puzzle** with row/column elimination.
-- ✅ Must be actively maintained OR have historical significance.
-- ✅ Must provide clear description and working links.
-- ❌ **Do not include** Tetris-style falling block games.
-
----
+Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
 
 ## License
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, the contributors have waived all copyright and related or neighboring rights to this work.
