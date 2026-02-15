@@ -219,6 +219,16 @@ Play, train, or experiment with Block Puzzle games directly in your browser.
 - **[WoodokuAI](https://github.com/CosmicSubspace/WoodokuAI)** `C++` - Multi-threaded search with configurable depth.
 
 - **[zx80/1010](https://github.com/zx80/1010)** `Python` - Optimized heuristic solver for 1010!
+- 
+### Monte Carlo Tree Search
+
+- **[Single-Player MCTS](https://github.com/topics/monte-carlo-tree-search)** - Monte Carlo Tree Search algorithms optimized for single-player puzzle games:
+  - Combines random sampling with tree search
+  - Effective for large state spaces
+  - Used in puzzle generation and solving
+
+- **[MCTS Sokoban](https://github.com/search?q=mcts+sokoban)** - Data-driven puzzle generation using MCTS for procedural content creation.
+
 
 ### Genetic Algorithms
 
