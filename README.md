@@ -335,6 +335,8 @@ Tangram puzzles share algorithmic challenges with block placement games.
 
 - **[3d-tangram-solver](https://github.com/ohnorobo/3d-tangram-solver)** `Python` - Hexagonal 3D wooden puzzle solver.
 
+- **[Katamino Tower](https://github.com/niyongsheng/katamino-tower)** `C` - 3D cylindrical pentomino puzzle solver with multi-threaded backtracking search and interactive Web 3D visualization.
+
 ---
 
 ## Development Tools
